@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MapCanvasViewController.swift
 //  BookCatcher
 //
 //  Created by Jorge Rebollo Jimenez on 07/06/17.
@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import MapKit
 
-class ViewController: UIViewController {
-
+class MapCanvasViewController: UIViewController {
+    @IBOutlet weak var canvasMapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
