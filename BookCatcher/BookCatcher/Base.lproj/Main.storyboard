@@ -24,12 +24,25 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="soc-V2-ANQ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NF8-Ry-gWs">
+                                <rect key="frame" x="313" y="28" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="9og-UI-SZI"/>
+                                    <constraint firstAttribute="height" constant="50" id="lkd-xg-CVf"/>
+                                </constraints>
+                                <state key="normal" image="BookCatcherCompass"/>
+                                <connections>
+                                    <action selector="updateUserLocationAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Xce-Sw-9vE"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="soc-V2-ANQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="U0d-lC-WDz"/>
                             <constraint firstAttribute="trailing" secondItem="soc-V2-ANQ" secondAttribute="trailing" id="Ucy-yH-KbZ"/>
+                            <constraint firstItem="NF8-Ry-gWs" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="Uil-rH-lFD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="soc-V2-ANQ" secondAttribute="bottom" id="bb6-3V-BXe"/>
+                            <constraint firstAttribute="trailing" secondItem="NF8-Ry-gWs" secondAttribute="trailing" constant="12" id="r4u-yY-G6k"/>
                             <constraint firstItem="soc-V2-ANQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="uUq-7F-IyH"/>
                         </constraints>
                     </view>
@@ -41,4 +54,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="BookCatcherCompass" width="512" height="512"/>
+    </resources>
 </document>

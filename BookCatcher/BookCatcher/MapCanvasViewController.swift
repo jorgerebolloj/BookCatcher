@@ -14,6 +14,7 @@ class MapCanvasViewController: UIViewController, CLLocationManagerDelegate {
     
     var manager = CLLocationManager()
     var updateLocationCount = 0
+    let mapDistance: CLLocationDistance = 300
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,12 +35,23 @@ class MapCanvasViewController: UIViewController, CLLocationManagerDelegate {
     // MARK: CLLocationManagerDelegate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if updateLocationCount < 4 {
-            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, 1000, 1000)
-            canvasMapView.setRegion(region, animated: true)
+            userLocation()
+            updateLocationCount += 1
         } else {
             manager.stopUpdatingLocation()
         }
         
+    }
+    
+    @IBAction func updateUserLocationAction(_ sender: Any) {
+        userLocation()
+    }
+    
+    func userLocation() {
+        if (manager.location?.coordinate) != nil {
+            let region = MKCoordinateRegionMakeWithDistance(manager.location!.coordinate, mapDistance, mapDistance)
+            canvasMapView.setRegion(region, animated: true)
+        }
     }
 }
 
